@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // Defines 1 rem
+    font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5%
+    
+    // order MaxWidth(1800) -> MaxWidth(600) <> MinWidth(600) -> MinWidth(1800)
+
+    @include respond(tab-land) {
+        font-size: 56.5%;
+        // 1 rem = 8px; 8/16 = 50%
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+         // 1 rem = 6px; 6/16 = .375%
+    }
+
+    @include respond(phone) {
+        font-size: 50%;
+       // 1 rem = 4px; 4/16 = 25%
+        
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1 rem = 12px; 12/16 = 75%
+    }
+
+    
+}
+
+body {
+    font-family: "Lato", sans-serif ;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+
+    box-sizing: border-box;
+}
+
